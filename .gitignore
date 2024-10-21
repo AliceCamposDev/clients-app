@@ -40,3 +40,8 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+
+#CustomersData (i'll change the folder later :thumbsup:)
+/public/img
+/db.json
