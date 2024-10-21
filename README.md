@@ -1,5 +1,12 @@
 # CustomersApp
 
+This is just a site that is beeing developed for web dev. @ my university 
+
+
+
+
+## angular default things> 
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.9.
 
 ## Development server
