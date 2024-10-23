@@ -44,4 +44,4 @@ Thumbs.db
 
 #CustomersData (i'll change the folder later :thumbsup:)
 /public/img
-/db.json
+#/db.json

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CustomerCardComponent } from '../customers-card/customers-card.component';
 import { Customers } from '../../models/customer.model';
 import { CommonModule } from '@angular/common';
+import { CustomerService } from '../../services/customer.service';
 
 @Component({
   selector: 'app-customers',
@@ -12,17 +13,15 @@ import { CommonModule } from '@angular/common';
 })
 
 export class CustomersComponent {
-  Customer: Customers[] = [{
-    id: 1 ,
-    name: 'John Doe',
-    company: 'Doe Enterprises',
-    photoCli: 'https://via.placeholder.com/150', // Sample placeholder image
-    email: 'john.doe@example.com',
-    address: '123 Main St, Anytown, USA',
-    phone: '123-456-7890',
-    firstPurchaseYear: 2020,
-    higherPurchaseValue: 5000,
-    higherPurchaseDate: '2023-10-21'
-  }];
-
+  constructor (private CustomerService : CustomerService){};
+  Customers = [] as  Customers[];
+  ngOnInit(): void{
+    this.fetchCustomers();
+  }
+  fetchCustomers(){
+    this.CustomerService.getCustomers().subscribe((customers: Customers[]) => {
+      console.log(customers);
+      this.Customers = customers;
+    })
+  }
 }
